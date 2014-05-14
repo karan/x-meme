@@ -5,7 +5,7 @@ The meme element for the modern web.
 
 ##### Example
 
-    <x-meme src="http://www.demo.karaokefy.com/meme/templates/Condescending_Wonka.jpg" top="oh you know html?" bottom="that's so cute."></x-meme>
+    <x-meme src="http://i.imgur.com/Jy7rCQx.jpg" top="oh you know html?" bottom="that's so cute."></x-meme>
 
 @element x-meme
 @blurb The meme element for the modern web.
@@ -24,6 +24,9 @@ The meme element for the modern web.
 
       .meme {
         position: relative;
+        -webkit-box-align:center;
+        -webkit-box-pack:center;
+        display:-webkit-box;
       }
       .x-meme-top, .x-meme-bottom {
         font-family: Impact;
@@ -76,10 +79,10 @@ The meme element for the modern web.
        * @attribute src
        * @type string
        */
-       src: 'http://i3.kym-cdn.com/photos/images/newsfeed/000/755/656/a43.gif',
+       src: 'http://i.imgur.com/Jy7rCQx.jpg',
 
        /**
-       * The text to be placed on the top of image.
+       * The text to be placed on the top of image
        * 
        * @attribute top
        * @type string
@@ -87,7 +90,7 @@ The meme element for the modern web.
        top: 'Polymer',
 
        /**
-       * The text to be placed on the bottom of image.
+       * The text to be placed on the bottom of image
        * 
        * @attribute bottom
        * @type string
