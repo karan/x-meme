@@ -1,24 +1,27 @@
 <link rel="import" href="../polymer/polymer.html">
 
 <!--
-Element providing solution to no problem in particular.
+The meme element for the modern web.
 
 ##### Example
 
-    <x-meme></x-meme>
+    <x-meme src="http://www.demo.karaokefy.com/meme/templates/Condescending_Wonka.jpg" top="oh you know html?" bottom="that's so cute."></x-meme>
 
 @element x-meme
-@blurb Element providing solution to no problem in particular.
+@blurb The meme element for the modern web.
 @status alpha
-@url github.io
+@url github.com/karan/x-meme
 -->
 <polymer-element name="x-meme" attributes="src top bottom">
 
   <template>
-    <!--<script src="process.js"></script>-->
     <!-- <link href="x-meme.css" rel="stylesheet" /> -->
 
     <style>
+      :host {
+        display: block;
+      }
+
       .meme {
         position: relative;
       }
@@ -49,7 +52,6 @@ Element providing solution to no problem in particular.
         z-index: -1;
         border: 0px;
         margin: 0px;
-        box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
         text-align: center;
         position: relative;
       }
@@ -68,21 +70,6 @@ Element providing solution to no problem in particular.
   <script>
 
     Polymer({
-      /**
-       * The `noevent` event is not actually fired from here,
-       * we document it as an example of documenting events.
-       * 
-       * @event noevent
-       */
-
-      /**
-       * The `notitle` attribute does not yet have a purpose.
-       * 
-       * @attribute notitle
-       * @type string
-       */
-      notitle: '',
-
       /**
        * The image to be used for the meme
        * 
@@ -106,21 +93,6 @@ Element providing solution to no problem in particular.
        * @type string
        */
        bottom: 'makes me happy',
-
-
-      ready: function() {
-      },
-
-      /**
-       * The `task` method does no work at this time.
-       * 
-       * @method task
-       * @return {Object} Returns undefined.
-       * @param {String} dummy Serves no purpose today.
-       */
-      task: function(dummy) {
-      }
-
     });
 
   </script>
