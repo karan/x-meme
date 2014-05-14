@@ -8,20 +8,55 @@
   <link rel="import" href="x-meme.html">
 
   <style>
-    .meme-1 {
-      float: left;
+    body {
+      font-family: helvetica, serif;
+      text-align: center;
     }
 
+    h1 {
+      font-size: 3em;
+      letter-spacing: 4px;
+    }
+
+    pre {
+      text-align: center;
+      font-size: 1.5em;
+      padding-bottom: 1em;
+      word-wrap: break-word;
+    }
+
+    figure {
+      padding: 10px;
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    .share {
+      margin-bottom: 30px;
+    }
   </style>
 
 </head>
 <body unresolved>
 
-  <x-meme class="meme-1"></x-meme>
+  <h1>&lt;x-meme&gt;</h1>
+
+  <div class="share">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:8000/x-meme/" data-text="x-meme is the future of the web" data-via="TheKaranGoel" data-size="large">Tweet</a>
+    <iframe src="http://ghbtns.com/github-btn.html?user=karan&repo=x-meme&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
+  </div>
+
+  <figure>
+    <x-meme></x-meme>
+    <pre>&lt;x-meme&gt;&lt;/x-meme&gt;</pre>
+  </figure>
   
-  <p>Lorem ipsum Anim nulla occaecat reprehenderit sed in incididunt irure proident ad cupidatat aute anim elit incididunt velit veniam voluptate Duis Ut laboris in veniam consequat pariatur magna dolore officia incididunt dolore qui enim tempor elit reprehenderit ut magna dolore ea exercitation elit voluptate eu minim exercitation sit mollit Ut et ad exercitation tempor sint deserunt sit tempor dolore aliqua cillum officia incididunt culpa nulla consequat consequat in ut deserunt ea aute enim tempor in ex ut cillum velit Duis tempor sint nisi officia proident aliqua irure Duis dolore ea cillum quis nulla non ut cupidatat culpa est reprehenderit esse adipisicing dolore voluptate cillum in aliquip officia incididunt nostrud nostrud exercitation sit ullamco sint tempor proident exercitation velit dolore ut amet dolor do anim veniam consequat culpa dolore sunt laboris magna aute nostrud nostrud dolore tempor non voluptate nostrud non dolor amet ullamco est nostrud velit commodo enim sit cillum aliqua in voluptate irure eu officia non veniam deserunt culpa sit reprehenderit anim non in ea dolore.</p>
+  <figure>
+    <x-meme src="http://i.imgur.com/Jy7rCQx.jpg" top="oh you know html?" bottom="that's so cute."></x-meme>
+    <pre>&lt;x-meme src="http://i.imgur.com/Jy7rCQx.jpg" top="oh you know html?" bottom="that's so cute."&gt;&lt;/x-meme&gt;</pre>
+  </figure>
+  
 
-  <x-meme src="http://www.demo.karaokefy.com/meme/templates/Condescending_Wonka.jpg" top="oh you know html?" bottom="that's so cute."></x-meme>
-
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </body>
 </html>
