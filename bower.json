@@ -1,10 +1,10 @@
 {
   "name": "x-meme",
-  "version": "0.0.7",
+  "version": "0.0.1",
   "authors": [
     "Karan Goel <karan@goel.im>"
   ],
-  "description": "The meme element for the modern web",
+  "description": "The meme element for modern web",
   "license": "MIT",
   "ignore": [
     "**/.*",
