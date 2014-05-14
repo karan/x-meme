@@ -1,7 +1,26 @@
 {
-  "name": "untitled-element",
-  "private": true,
+  "name": "x-meme",
+  "version": "0.0.7",
+  "authors": [
+    "Karan Goel <karan@goel.im>"
+  ],
+  "description": "The meme element for the modern web",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "keywords": [
+    "meme",
+    "web-components",
+    "image",
+    "troll",
+    "yolo"
+  ],
   "dependencies": {
     "polymer": "Polymer/polymer#master"
-  }
+  },
 }
