@@ -12,13 +12,55 @@ Element providing solution to no problem in particular.
 @status alpha
 @url github.io
 -->
-<polymer-element name="x-meme" attributes="notitle">
+<polymer-element name="x-meme" attributes="src top bottom">
 
   <template>
+    <!--<script src="process.js"></script>-->
+    <!-- <link href="x-meme.css" rel="stylesheet" /> -->
 
-    <link href="x-meme.css" rel="stylesheet" />
+    <style>
+      .meme {
+        position: relative;
+      }
+      .x-meme-top, .x-meme-bottom {
+        font-family: Impact;
+        font-size: 2em;
+        text-shadow: 1px 2px 5px black;
+        color: white;
+        z-index: 3;
+        text-align: center;
+        word-wrap: break-word;
+        position: absolute;
+      }
+      .x-meme-top {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+      }
+      .x-meme-bottom {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+      }
+      .x-meme-img {
+        z-index: -1;
+        border: 0px;
+        margin: 0px;
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        text-align: center;
+        position: relative;
+      }
+    </style>
 
-    <content></content>
+    <content>
+      <div class="meme">
+        <div class="x-meme-top">{{top}}</div>
+        <div class="x-meme-img"><img src="{{src}}"></div>
+        <div class="x-meme-bottom">{{bottom}}</div>
+      </div>
+    </content>
 
   </template>
 
@@ -39,6 +81,31 @@ Element providing solution to no problem in particular.
        * @type string
        */
       notitle: '',
+
+      /**
+       * The image to be used for the meme
+       * 
+       * @attribute src
+       * @type string
+       */
+       src: 'http://i3.kym-cdn.com/photos/images/newsfeed/000/755/656/a43.gif',
+
+       /**
+       * The text to be placed on the top of image.
+       * 
+       * @attribute top
+       * @type string
+       */
+       top: 'Polymer',
+
+       /**
+       * The text to be placed on the bottom of image.
+       * 
+       * @attribute bottom
+       * @type string
+       */
+       bottom: 'makes me happy',
+
 
       ready: function() {
       },

@@ -22,5 +22,5 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#master"
-  },
+  }
 }
