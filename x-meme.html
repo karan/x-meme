@@ -1,18 +1,26 @@
 <link rel="import" href="../polymer/polymer.html">
 
 <!--
-The meme element for modern web. <a href="../x-meme/demo.html"><b>Live demo</b></a><p><iframe src="http://ghbtns.com/github-btn.html?user=karan&repo=x-meme&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
+The meme element for modern web. [**Live demo**](../x-meme/demo.html)
+
+<iframe src="http://ghbtns.com/github-btn.html?user=karan&repo=x-meme&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
 
 ##### Example
+  
+  Add an image, top text and bottom text
 
     <x-meme src="http://i.imgur.com/Jy7rCQx.jpg" top="oh you know html?" bottom="that's so cute."></x-meme>
+
+  Make the text uppercase
+
+    <x-meme src="https://i.imgflip.com/26am.jpg" bottom="germans!" uppercase="true"></x-meme>
 
 @element x-meme
 @blurb The meme element for modern web.
 @status alpha
 @homepage http://karan.github.io/x-meme
 -->
-<polymer-element name="x-meme" attributes="src top bottom">
+<polymer-element name="x-meme" attributes="src top bottom uppercase">
 
   <template>
 
@@ -79,7 +87,7 @@ The meme element for modern web. <a href="../x-meme/demo.html"><b>Live demo</b><
 
     Polymer({
       /**
-       * The image to be used for the meme
+       * The image to be used for the meme.
        * 
        * @attribute src
        * @type string
@@ -87,20 +95,36 @@ The meme element for modern web. <a href="../x-meme/demo.html"><b>Live demo</b><
        src: 'http://i.imgur.com/C8HxtHM.jpg',
 
        /**
-       * The text to be placed on the top of image
+       * The text to be placed on the top of image. Can be empty.
        * 
        * @attribute top
        * @type string
        */
-       top: 'One simply does not',
+       top: '',
 
        /**
-       * The text to be placed on the bottom of image
+       * The text to be placed on the bottom of image. Can be empty.
        * 
        * @attribute bottom
        * @type string
        */
-       bottom: 'create memes on fly',
+       bottom: '',
+
+       /**
+       * If `true`, sets the text to uppercase. Can be omitted for 
+       * `false`.
+       * 
+       * @attribute uppercase
+       * @type boolean
+       */
+       bottom: '',
+
+       ready: function() {
+        if (this.uppercase) {
+          this.top = this.top.toUpperCase();
+          this.bottom = this.bottom.toUpperCase();
+        }
+       }
     });
 
   </script>
