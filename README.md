@@ -1,9 +1,22 @@
 \<x-meme\>
 ================
 
-See the [component page](http://karan.github.io/x-meme) for more information.
+The meme element for modern web
 
-## Usage
+| [Documentation](http://karan.github.io/x-meme/) | [Live demo](http://karan.github.io/x-meme/components/x-meme/demo.html) |
+| --- | --- |
+
+## Examples
+
+  Add an image, top text and bottom text
+
+    <x-meme src="http://i.imgur.com/Jy7rCQx.jpg" top="oh you know html?" bottom="that's so cute."></x-meme>
+
+  Make the text uppercase
+
+    <x-meme src="https://i.imgflip.com/26am.jpg" bottom="germans!" uppercase="true"></x-meme>
+
+## Install
 
 ### Method 1 - bower
 
