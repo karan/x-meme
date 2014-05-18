@@ -20,7 +20,7 @@ The meme element for modern web. [**Live demo**](../x-meme/demo.html)
 @status alpha
 @homepage http://karan.github.io/x-meme
 -->
-<polymer-element name="x-meme" attributes="src top bottom uppercase">
+<polymer-element name="x-meme" attributes="type src top bottom uppercase">
 
   <template>
 
@@ -50,7 +50,7 @@ The meme element for modern web. [**Live demo**](../x-meme/demo.html)
         text-align: center;
         word-wrap: break-word;
         position: absolute;
-        padding: 5px 0;
+        padding: 10px;
       }
       .x-meme-top {
         position: absolute;
@@ -76,7 +76,7 @@ The meme element for modern web. [**Live demo**](../x-meme/demo.html)
     <content>
       <div class="meme">
         <div class="x-meme-top">{{top}}</div>
-        <div class="x-meme-img"><img src="{{src}}"></div>
+        <div class="x-meme-img"><img src="{{img}}"></div>
         <div class="x-meme-bottom">{{bottom}}</div>
       </div>
     </content>
@@ -86,13 +86,59 @@ The meme element for modern web. [**Live demo**](../x-meme/demo.html)
   <script>
 
     Polymer({
+
       /**
-       * The image to be used for the meme.
+       * Uses the type of image for meme image. If both `type` and 
+       * `src` are provided, `src` has higher preference. One of:
+       *
+       * `ancientaliens`
+       *
+       * `batmanslappingrobin`
+       *
+       * `braceyourselves`
+       *
+       * `doge`
+       *
+       * `facepalm`
+       *
+       * `firstworldproblems`
+       *
+       * `futuramafry`
+       *
+       * `grumpycat`
+       *
+       * `idontalways`
+       *
+       * `laughingmen`
+       *
+       * `onesimplydoesnot`
+       *
+       * `picard`
+       *
+       * `scumbagsteve`
+       *
+       * `successkid`
+       *
+       * `thatwouldbegreat`
+       *
+       * `toodamnhigh`
+       *
+       * `wonka`
+       *
+       * `yaoming`
+       *
+       * `yuno`
+       * 
+       * @attribute type
+       * @type string
+       */
+
+      /**
+       * The direct url of the image to be used for the meme.
        * 
        * @attribute src
        * @type string
        */
-       src: 'http://i.imgur.com/C8HxtHM.jpg',
 
        /**
        * The text to be placed on the top of image. Can be empty.
@@ -111,16 +157,20 @@ The meme element for modern web. [**Live demo**](../x-meme/demo.html)
        bottom: '',
 
        /**
-       * If `true`, sets the text to uppercase. Can be omitted for 
-       * `false`.
+       * If `false`, sets the text to as provided. Defaults to `true`.
        * 
        * @attribute uppercase
        * @type boolean
        */
-       bottom: '',
+       uppercase: true,
 
        ready: function() {
-        if (this.uppercase) {
+        if (!this.src) {
+          this.img = 'images/' + this.type.toLowerCase() + '.jpg';
+        } else {
+          this.img = this.src;
+        }
+        if (this.uppercase == true) {
           this.top = this.top.toUpperCase();
           this.bottom = this.bottom.toUpperCase();
         }

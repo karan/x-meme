@@ -8,13 +8,13 @@ The meme element for modern web
 
 ## Examples
 
-  Add an image, top text and bottom text
+  Top text and bottom text
 
-    <x-meme src="http://i.imgur.com/Jy7rCQx.jpg" top="oh you know html?" bottom="that's so cute."></x-meme>
+    <x-meme type="wonka" top="oh you know html?" bottom="that's so cute."></x-meme>
 
-  Make the text uppercase
+  Just bottom just with custom image
 
-    <x-meme src="https://i.imgflip.com/26am.jpg" bottom="germans!" uppercase="true"></x-meme>
+    <x-meme src="https://i.imgflip.com/26am.jpg" bottom="germans!"></x-meme>
 
 ## Install
 
