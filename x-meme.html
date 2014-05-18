@@ -28,16 +28,16 @@ The meme element for modern web. [**Live demo**](../x-meme/demo.html)
       :host {
         display: block;
       }
-
-      .meme {
+      #meme {
         position: relative;
         -webkit-box-align:center;
         -webkit-box-pack:center;
         display:-webkit-box;
+        margin: 0 auto;
       }
-      .x-meme-top, .x-meme-bottom {
+      #topCaption, #bottomCaption {
         font-family: Impact;
-        font-size: 2em;
+        font-size: 2.4em;
         -webkit-text-stroke: 1px black;
         text-shadow:
            3px 3px 0 #000,
@@ -49,22 +49,21 @@ The meme element for modern web. [**Live demo**](../x-meme/demo.html)
         z-index: 3;
         text-align: center;
         word-wrap: break-word;
-        position: absolute;
-        padding: 10px;
+        padding: 10px 0;
       }
-      .x-meme-top {
+      #topCaption {
         position: absolute;
         top: 0px;
         left: 0px;
         right: 0px;
       }
-      .x-meme-bottom {
+      #bottomCaption {
         position: absolute;
         bottom: 0px;
         left: 0px;
         right: 0px;
       }
-      .x-meme-img {
+      #memeImage {
         z-index: -1;
         border: 0px;
         margin: 0px;
@@ -74,10 +73,10 @@ The meme element for modern web. [**Live demo**](../x-meme/demo.html)
     </style>
 
     <content>
-      <div class="meme">
-        <div class="x-meme-top">{{top}}</div>
-        <div class="x-meme-img"><img src="{{img}}"></div>
-        <div class="x-meme-bottom">{{bottom}}</div>
+      <div id="meme">
+        <div id="topCaption">{{top}}</div>
+        <div id="memeImage"><img id="memeimg" src="{{img}}"></div>
+        <div id="bottomCaption">{{bottom}}</div>
       </div>
     </content>
 
@@ -174,7 +173,15 @@ The meme element for modern web. [**Live demo**](../x-meme/demo.html)
           this.top = this.top.toUpperCase();
           this.bottom = this.bottom.toUpperCase();
         }
-       }
+      },
+
+      domReady: function() {
+        var imgWidth = this.$.memeimg.width + "px";
+
+        this.$.topCaption.setAttribute("style", "width:"+imgWidth);
+        this.$.bottomCaption.setAttribute("style", "width:"+imgWidth);
+        this.$.meme.setAttribute("style", "max-width:"+imgWidth);
+      }
     });
 
   </script>
