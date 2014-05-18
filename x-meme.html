@@ -176,11 +176,13 @@ The meme element for modern web. [**Live demo**](../x-meme/demo.html)
       },
 
       domReady: function() {
+        console.log(this.$.memeimg);
         var imgWidth = this.$.memeimg.width + "px";
+        console.log(imgWidth);
 
         this.$.topCaption.setAttribute("style", "width:"+imgWidth);
         this.$.bottomCaption.setAttribute("style", "width:"+imgWidth);
-        this.$.meme.setAttribute("style", "max-width:"+imgWidth);
+        this.$.meme.setAttribute("style", "width:"+imgWidth);
       }
     });
 
