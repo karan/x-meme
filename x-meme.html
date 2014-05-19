@@ -49,7 +49,7 @@ The meme element for modern web. [**Live demo**](../x-meme/demo.html)
         z-index: 3;
         text-align: center;
         word-wrap: break-word;
-        padding: 10px 0;
+        padding: 10px 0px;
       }
       #topCaption {
         position: absolute;
@@ -75,7 +75,7 @@ The meme element for modern web. [**Live demo**](../x-meme/demo.html)
     <content>
       <div id="meme">
         <div id="topCaption">{{top}}</div>
-        <div id="memeImage"><img id="memeimg" src="{{img}}"></div>
+        <div id="memeImage"><img id="memeimg" src="{{img}}" on-load="{{imageLoaded}}"></div>
         <div id="bottomCaption">{{bottom}}</div>
       </div>
     </content>
@@ -175,7 +175,7 @@ The meme element for modern web. [**Live demo**](../x-meme/demo.html)
         }
       },
 
-      domReady: function() {
+      imageLoaded: function() {
         console.log(this.$.memeimg);
         var imgWidth = this.$.memeimg.width + "px";
         console.log(imgWidth);
