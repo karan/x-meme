@@ -1,0 +1,191 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+The meme element for modern web. [**Live demo**](../x-meme/demo.html)
+
+<iframe src="http://ghbtns.com/github-btn.html?user=karan&repo=x-meme&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
+
+##### Example
+  
+  Top text and bottom text
+
+    <x-meme type="wonka" top="oh you know html?" bottom="that's so cute."></x-meme>
+
+  Just bottom just with custom image
+
+    <x-meme src="https://i.imgflip.com/26am.jpg" bottom="germans!"></x-meme>
+
+@element x-meme
+@blurb The meme element for modern web.
+@status alpha
+@homepage http://karan.github.io/x-meme
+-->
+<polymer-element name="x-meme" attributes="type src top bottom uppercase">
+
+  <template>
+
+    <style>
+      :host {
+        display: block;
+      }
+      #meme {
+        position: relative;
+        -webkit-box-align:center;
+        -webkit-box-pack:center;
+        display:-webkit-box;
+        margin: 0 auto;
+      }
+      #topCaption, #bottomCaption {
+        font-family: Impact;
+        font-size: 2.4em;
+        -webkit-text-stroke: 1px black;
+        text-shadow:
+           3px 3px 0 #000,
+         -1px -1px 0 #000,  
+          1px -1px 0 #000,
+          -1px 1px 0 #000,
+           1px 1px 0 #000;
+        color: white;
+        z-index: 3;
+        text-align: center;
+        word-wrap: break-word;
+        padding: 10px 0px;
+      }
+      #topCaption {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+      }
+      #bottomCaption {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+      }
+      #memeImage {
+        z-index: -1;
+        border: 0px;
+        margin: 0px;
+        text-align: center;
+        position: relative;
+      }
+    </style>
+
+    <content>
+      <div id="meme">
+        <div id="topCaption">{{top}}</div>
+        <div id="memeImage"><img id="memeimg" src="{{img}}" on-load="{{imageLoaded}}"></div>
+        <div id="bottomCaption">{{bottom}}</div>
+      </div>
+    </content>
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      /**
+       * Uses the type of image for meme image. If both `type` and 
+       * `src` are provided, `src` has higher preference. One of:
+       *
+       * `ancientaliens`
+       *
+       * `batmanslappingrobin`
+       *
+       * `braceyourselves`
+       *
+       * `doge`
+       *
+       * `facepalm`
+       *
+       * `firstworldproblems`
+       *
+       * `futuramafry`
+       *
+       * `grumpycat`
+       *
+       * `idontalways`
+       *
+       * `laughingmen`
+       *
+       * `onesimplydoesnot`
+       *
+       * `picard`
+       *
+       * `scumbagsteve`
+       *
+       * `successkid`
+       *
+       * `thatwouldbegreat`
+       *
+       * `toodamnhigh`
+       *
+       * `wonka`
+       *
+       * `yaoming`
+       *
+       * `yuno`
+       * 
+       * @attribute type
+       * @type string
+       */
+
+      /**
+       * The direct url of the image to be used for the meme.
+       * 
+       * @attribute src
+       * @type string
+       */
+
+       /**
+       * The text to be placed on the top of image. Can be empty.
+       * 
+       * @attribute top
+       * @type string
+       */
+       top: '',
+
+       /**
+       * The text to be placed on the bottom of image. Can be empty.
+       * 
+       * @attribute bottom
+       * @type string
+       */
+       bottom: '',
+
+       /**
+       * If `false`, sets the text to as provided. Defaults to `true`.
+       * 
+       * @attribute uppercase
+       * @type boolean
+       */
+       uppercase: true,
+
+       ready: function() {
+        if (!this.src) {
+          this.img = 'images/' + this.type.toLowerCase() + '.jpg';
+        } else {
+          this.img = this.src;
+        }
+        if (this.uppercase == true) {
+          this.top = this.top.toUpperCase();
+          this.bottom = this.bottom.toUpperCase();
+        }
+      },
+
+      imageLoaded: function() {
+        console.log(this.$.memeimg);
+        var imgWidth = this.$.memeimg.width + "px";
+        console.log(imgWidth);
+
+        this.$.topCaption.setAttribute("style", "width:"+imgWidth);
+        this.$.bottomCaption.setAttribute("style", "width:"+imgWidth);
+        this.$.meme.setAttribute("style", "width:"+imgWidth);
+      }
+    });
+
+  </script>
+
+</polymer-element>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+
+  <title>x-meme Demo</title>
+
+  <script src="../platform/platform.js"></script>
+  <link rel="import" href="x-meme.html">
+
+  <style>
+    body {
+      font-family: helvetica, serif;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      letter-spacing: 4px;
+    }
+
+    pre {
+      text-align: center;
+      font-size: 1.5em;
+      padding-bottom: 1em;
+      word-wrap: break-word;
+    }
+
+    figure {
+      padding: 10px;
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    .share {
+      margin-bottom: 30px;
+    }
+  </style>
+
+</head>
+<body unresolved>
+
+  <h1>&lt;x-meme&gt;</h1>
+  
+  <div class="share">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://karan.github.io/x-meme/" data-text="x-meme is the future of memes on the web" data-via="TheKaranGoel" data-size="large">Tweet</a>
+    <iframe src="http://ghbtns.com/github-btn.html?user=karan&repo=x-meme&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
+  </div>
+
+  <figure>
+    <x-meme type="braceyourselves"></x-meme>
+    <pre>&lt;x-meme type="braceyourselves"&gt;&lt;/x-meme&gt;</pre>
+  </figure>
+
+  <figure>
+    <x-meme type="ancientaliens" bottom="germans"></x-meme>
+    <pre>&lt;x-meme type="ancientaliens" bottom="germans"&gt;&lt;/x-meme&gt;</pre>
+  </figure>
+  
+  <figure>
+    <x-meme src="https://i.imgflip.com/c2qn.jpg" top="if people could make references that i understand" bottom="that would be great"></x-meme>
+    <pre>&lt;x-meme src="https://i.imgflip.com/c2qn.jpg" top="if people could make references that i understand" bottom="that would be great"&gt;&lt;/x-meme&gt;</pre>
+  </figure>
+  
+
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</body>
+</html>
